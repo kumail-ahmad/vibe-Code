@@ -87,3 +87,4 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
     </motion.div>
   );
 }
+
