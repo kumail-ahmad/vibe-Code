@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    /* Palette tokens */
+    --color-bg-dark: #101612;
+    --color-bg-card-dark: #17221b;
+    --color-forest-900: #0d1610;
+    --color-forest-800: #142419;
+    --color-forest-700: #1e3526;
+    --color-forest-600: #2d4f3a;
+    --color-forest-500: #3f6c50;
+    --color-forest-400: #588e6c;
+
+    --color-parchment-100: #fbf9f4;
+    --color-parchment-200: #f4eee1;
+    --color-parchment-300: #e8ddc8;
+    --color-parchment-400: #d6c5a8;
+
+    --color-amber-gold: #c87a38;
+    --color-redwood-bark: #8c4a27;
+    --color-charcoal: #1c211e;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-dark);
+    color: #ece8df;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Utilities */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Subtle Grain Overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Subtle Glass / Leather border effects */
+.border-forest-subtle {
+  border-color: rgba(63, 108, 80, 0.25);
+}
+
+.border-amber-subtle {
+  border-color: rgba(200, 122, 56, 0.3);
+}
+
+/* Focus outline for WCAG 2.1 AA accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #c87a38;
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
