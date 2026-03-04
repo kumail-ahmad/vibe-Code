@@ -91,3 +91,4 @@ export const LocationCard: React.FC<{ compact?: boolean }> = ({ compact = false 
     </div>
   );
 };
+
