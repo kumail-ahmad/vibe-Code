@@ -40,3 +40,4 @@ export const PaperCard: React.FC<PaperCardProps> = ({
     </div>
   );
 };
+
