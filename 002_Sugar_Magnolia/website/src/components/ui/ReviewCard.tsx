@@ -27,3 +27,4 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ quote, theme }) => {
     </div>
   );
 };
+
