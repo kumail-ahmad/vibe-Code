@@ -151,3 +151,4 @@ export const CollectionPage: React.FC = () => {
     </div>
   );
 };
+
