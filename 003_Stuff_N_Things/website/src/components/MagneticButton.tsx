@@ -124,3 +124,4 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
     </div>
   );
 };
+
