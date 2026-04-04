@@ -122,3 +122,4 @@ export const VendorsSection: React.FC = () => {
     </section>
   );
 };
+
