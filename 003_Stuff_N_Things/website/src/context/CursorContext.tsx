@@ -38,3 +38,4 @@ export const CursorProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 };
 
 export const useCursor = () => useContext(CursorContext);
+
