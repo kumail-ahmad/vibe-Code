@@ -138,3 +138,4 @@ export const Artists: React.FC<ArtistsProps> = ({ setCursorState, onOpenBooking 
     </section>
   );
 };
+
