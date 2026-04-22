@@ -100,3 +100,4 @@ export const SalonExperience: React.FC<SalonExperienceProps> = ({ setCursorState
     </section>
   );
 };
+
