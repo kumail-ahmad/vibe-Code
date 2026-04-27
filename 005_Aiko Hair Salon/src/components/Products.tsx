@@ -83,3 +83,4 @@ export const Products: React.FC<ProductsProps> = ({ setCursorState }) => {
     </section>
   );
 };
+
