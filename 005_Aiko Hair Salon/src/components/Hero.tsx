@@ -159,3 +159,4 @@ export const Hero: React.FC<HeroProps> = ({ setCursorState, onOpenBooking }) => 
     </section>
   );
 };
+
