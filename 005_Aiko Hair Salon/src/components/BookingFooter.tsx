@@ -136,3 +136,4 @@ export const BookingFooter: React.FC<BookingFooterProps> = ({ onOpenBooking, set
     </footer>
   );
 };
+
