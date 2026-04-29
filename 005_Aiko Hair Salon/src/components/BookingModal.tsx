@@ -189,3 +189,4 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, set
     </AnimatePresence>
   );
 };
+
