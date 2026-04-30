@@ -85,3 +85,4 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({ cursorState, cursorT
     </motion.div>
   );
 };
+
