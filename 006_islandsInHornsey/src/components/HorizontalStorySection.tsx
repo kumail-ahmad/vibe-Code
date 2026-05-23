@@ -147,3 +147,4 @@ export const HorizontalStorySection: React.FC = () => {
     </section>
   );
 };
+
