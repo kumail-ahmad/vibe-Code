@@ -92,3 +92,4 @@ export const InstagramSection: React.FC = () => {
     </section>
   );
 };
+
