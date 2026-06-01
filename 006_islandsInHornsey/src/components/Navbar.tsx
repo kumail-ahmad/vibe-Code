@@ -114,3 +114,4 @@ export const Navbar: React.FC = () => {
     </motion.header>
   );
 };
+
