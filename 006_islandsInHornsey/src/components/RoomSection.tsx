@@ -74,3 +74,4 @@ export const RoomSection: React.FC = () => {
     </section>
   );
 };
+
