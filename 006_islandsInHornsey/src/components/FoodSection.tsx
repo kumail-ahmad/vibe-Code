@@ -150,3 +150,4 @@ export const FoodSection: React.FC = () => {
     </section>
   );
 };
+
