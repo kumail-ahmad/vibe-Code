@@ -38,3 +38,4 @@ export const TextMaskReveal: React.FC<TextMaskRevealProps> = ({
     </div>
   );
 };
+
