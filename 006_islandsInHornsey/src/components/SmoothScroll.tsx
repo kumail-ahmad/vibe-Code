@@ -32,3 +32,4 @@ export const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
 
   return <>{children}</>;
 };
+
