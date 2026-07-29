@@ -98,3 +98,4 @@ export const HorizontalWorkSection: React.FC = () => {
     </section>
   );
 };
+
