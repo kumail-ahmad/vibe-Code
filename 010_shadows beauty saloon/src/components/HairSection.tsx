@@ -96,3 +96,4 @@ export const HairSection: React.FC = () => {
     </section>
   );
 };
+
