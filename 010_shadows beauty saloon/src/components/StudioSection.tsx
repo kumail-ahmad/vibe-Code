@@ -57,3 +57,4 @@ export const StudioSection: React.FC = () => {
     </section>
   );
 };
+
