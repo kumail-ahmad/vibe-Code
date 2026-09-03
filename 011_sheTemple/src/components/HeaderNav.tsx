@@ -75,3 +75,4 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ onOpenConsultation }) => {
     </motion.header>
   );
 };
+
