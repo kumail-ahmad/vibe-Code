@@ -152,3 +152,4 @@ export const InteractiveBotanicalLandscape: React.FC = () => {
     </section>
   );
 };
+
