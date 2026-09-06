@@ -73,3 +73,4 @@ export const BridalOccasionScene: React.FC = () => {
     </section>
   );
 };
+
