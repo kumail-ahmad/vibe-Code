@@ -86,3 +86,4 @@ export const BloomingGarmentScene: React.FC = () => {
     </section>
   );
 };
+
