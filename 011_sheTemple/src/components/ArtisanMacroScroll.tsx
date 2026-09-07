@@ -93,3 +93,4 @@ export const ArtisanMacroScroll: React.FC = () => {
     </section>
   );
 };
+
