@@ -73,3 +73,4 @@ export const BotanicalThreadCanvas: React.FC = () => {
     </div>
   );
 };
+
