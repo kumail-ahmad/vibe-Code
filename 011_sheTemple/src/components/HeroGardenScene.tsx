@@ -167,3 +167,4 @@ export const HeroGardenScene: React.FC<HeroGardenSceneProps> = ({ onExplore }) =
     </section>
   );
 };
+
