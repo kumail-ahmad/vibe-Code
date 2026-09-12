@@ -137,3 +137,4 @@ export const TextileDisplacementScene: React.FC = () => {
     </section>
   );
 };
+
