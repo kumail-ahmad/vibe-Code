@@ -110,3 +110,4 @@ export const MinimalContactAtelier: React.FC<MinimalContactAtelierProps> = ({ on
     </section>
   );
 };
+
