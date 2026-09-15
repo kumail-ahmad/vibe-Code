@@ -197,3 +197,4 @@ export const PatternFitCanvas: React.FC = () => {
     </section>
   );
 };
+
