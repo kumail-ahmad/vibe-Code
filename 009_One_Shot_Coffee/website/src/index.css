@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-editorial {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-serif-italic {
+    font-family: 'Instrument Serif', Georgia, serif;
+  }
+  .font-script {
+    font-family: 'Caveat', cursive;
+  }
+  .font-sans-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+:root {
+  --color-espresso-dark: #12100E;
+  --color-espresso-mid: #1A1815;
+  --color-espresso-card: #221F1B;
+  --color-cream-light: #F4EFE6;
+  --color-terracotta: #C86D51;
+  --color-amber-gold: #D4A359;
+}
+
+body {
+  background-color: #12100E;
+  color: #E8E2D8;
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #12100E;
+}
+::-webkit-scrollbar-thumb {
+  background: #332D27;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C86D51;
+}
+
+/* Subtle Film Grain Noise Texture Overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Rotating stamp badge animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+
+/* Vertical Text orientation */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
