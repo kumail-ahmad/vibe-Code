@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, .font-serif-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom Lenis Smooth Scroll styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-prevent {
+  overscroll-behavior: contain;
+}
+
+/* High-Contrast Black & White Image Treatment */
+.bw-image {
+  filter: grayscale(100%) contrast(1.15) brightness(0.9);
+  transition: filter 0.5s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bw-image-hover:hover {
+  filter: grayscale(100%) contrast(1.25) brightness(1);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom cursor default pointer behavior on desktop */
+@media (min-width: 1024px) {
+  body {
+    cursor: default;
+  }
+}
