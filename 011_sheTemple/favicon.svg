@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Cute Botanical Flower Favicon -->
+  <circle cx="32" cy="32" r="30" fill="#FFF9F7" stroke="#E9AEB8" stroke-width="2"/>
+  
+  <!-- Leaves -->
+  <path d="M 20,44 Q 10,48 16,36 Q 24,38 20,44 Z" fill="#526052" />
+  <path d="M 44,44 Q 54,48 48,36 Q 40,38 44,44 Z" fill="#526052" />
+  
+  <!-- Flower Petals -->
+  <g fill="#F6D8DC" stroke="#B96C7A" stroke-width="1.5">
+    <ellipse cx="32" cy="18" rx="7" ry="10" />
+    <ellipse cx="44" cy="27" rx="7" ry="10" transform="rotate(72 44 27)" />
+    <ellipse cx="40" cy="41" rx="7" ry="10" transform="rotate(144 40 41)" />
+    <ellipse cx="24" cy="41" rx="7" ry="10" transform="rotate(216 24 41)" />
+    <ellipse cx="20" cy="27" rx="7" ry="10" transform="rotate(288 20 27)" />
+  </g>
+  
+  <!-- Inner Flower Center -->
+  <circle cx="32" cy="31" r="6" fill="#B96C7A" />
+  <circle cx="32" cy="31" r="3" fill="#C5A059" />
+</svg>
