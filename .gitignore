@@ -5,9 +5,6 @@ node_modules/
 .pnpm-store/
 
 # Build outputs & caches
-dist/
-*/dist/
-*/*/dist/
 .next/
 .cache/
 .vite/
@@ -42,3 +39,6 @@ Global_50_Client_Hunt_Researched.xlsx
 inspect_excel.js
 leads_summary.json
 print_build_now.js
+
+# Private local automation
+automation/

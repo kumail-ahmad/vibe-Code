@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vibe-Code // Handcrafted Web Experiences by Kumail Ahmad</title>
+  <title>vibe-Code // Handcrafted Web Architecture by Kumail Ahmad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0b0f17;
-      --card-bg: rgba(20, 27, 41, 0.7);
+      --bg: #07090e;
+      --card-bg: rgba(15, 20, 31, 0.75);
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover: rgba(30, 41, 59, 0.9);
-      --accent-primary: #38bdf8;
-      --accent-secondary: #a855f7;
-      --accent-glow: rgba(56, 189, 248, 0.15);
-      --text-main: #f1f5f9;
+      --card-hover: rgba(22, 30, 46, 0.95);
+      --accent-cyan: #38bdf8;
+      --accent-purple: #a855f7;
+      --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --tag-bg: rgba(56, 189, 248, 0.1);
-      --tag-text: #7dd3fc;
     }
 
     * {
@@ -35,185 +32,211 @@
       min-height: 100vh;
       line-height: 1.6;
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 70%, rgba(168, 85, 247, 0.07) 0%, transparent 45%);
+        radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.06) 0%, transparent 50%);
       background-attachment: fixed;
-      padding: 3rem 1.5rem 5rem;
+      padding: 4rem 1.5rem 6rem;
     }
 
     .container {
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
     header {
       text-align: center;
       margin-bottom: 3.5rem;
-      padding: 2rem 1rem;
+      padding-top: 1rem;
     }
 
-    .badge {
+    .badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.85rem;
+      gap: 0.6rem;
+      padding: 0.4rem 1rem;
       border-radius: 9999px;
-      font-size: 0.825rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: var(--tag-bg);
-      color: var(--tag-text);
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent-cyan);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    .badge-dot {
-      width: 7px;
-      height: 7px;
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
       background: #10b981;
       border-radius: 50%;
       box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
     }
 
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .lead {
+    .hero-lead {
       color: var(--text-muted);
-      font-size: 1.15rem;
-      max-width: 680px;
-      margin: 0 auto 1.5rem;
+      font-size: 1.2rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
     }
 
-    .author-bar {
+    .author-card {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--card-border);
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.25rem;
       border-radius: 9999px;
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
+      backdrop-filter: blur(8px);
     }
 
-    .author-bar a {
-      color: var(--accent-primary);
+    .author-card a {
+      color: var(--accent-cyan);
       text-decoration: none;
       font-weight: 600;
     }
 
-    .filter-bar {
+    .controls-bar {
       display: flex;
-      justify-content: center;
-      gap: 0.6rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin: 3rem 0;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 0.5rem;
       flex-wrap: wrap;
-      margin-bottom: 2.75rem;
+      justify-content: center;
     }
 
     .filter-btn {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--text-muted);
       border: 1px solid var(--card-border);
-      padding: 0.5rem 1.1rem;
+      padding: 0.5rem 1.15rem;
       border-radius: 9999px;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .filter-btn:hover, .filter-btn.active {
-      background: var(--accent-primary);
-      color: #0b0f17;
-      border-color: var(--accent-primary);
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      background: var(--accent-cyan);
+      color: #07090e;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+      transform: translateY(-1px);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2rem;
     }
 
-    .card {
+    .project-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      backdrop-filter: blur(12px);
-      transition: all 0.25s ease;
+      border-radius: 18px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(12px);
       position: relative;
-      overflow: hidden;
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.4);
       background: var(--card-hover);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card-header {
+    .card-banner {
+      height: 110px;
+      position: relative;
+      padding: 1.25rem 1.5rem;
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 0.75rem;
+      justify-content: space-between;
     }
 
-    .project-index {
+    .banner-001 { background: linear-gradient(135deg, #153322, #0d2015); border-bottom: 1px solid rgba(46, 125, 50, 0.3); }
+    .banner-002 { background: linear-gradient(135deg, #442727, #241416); border-bottom: 1px solid rgba(225, 112, 85, 0.3); }
+    .banner-003 { background: linear-gradient(135deg, #3d2f17, #1f180c); border-bottom: 1px solid rgba(243, 156, 18, 0.3); }
+    .banner-005 { background: linear-gradient(135deg, #1f1f24, #121215); border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+    .banner-006 { background: linear-gradient(135deg, #132e3b, #091a22); border-bottom: 1px solid rgba(0, 168, 255, 0.3); }
+    .banner-009 { background: linear-gradient(135deg, #3b2317, #1c100a); border-bottom: 1px solid rgba(160, 82, 45, 0.3); }
+    .banner-010 { background: linear-gradient(135deg, #331d3d, #1b0e21); border-bottom: 1px solid rgba(155, 89, 182, 0.3); }
+    .banner-011 { background: linear-gradient(135deg, #1e332d, #0f1c19); border-bottom: 1px solid rgba(38, 166, 154, 0.3); }
+    .banner-012 { background: linear-gradient(135deg, #212121, #0a0a0a); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+    .card-id {
       font-family: 'Space Grotesk', monospace;
-      font-size: 0.8rem;
-      color: var(--accent-primary);
+      font-size: 0.825rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-
-    .category-pill {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.25rem 0.65rem;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
-      border: 1px solid var(--card-border);
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .card-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+    .card-domain {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(255, 255, 255, 0.15);
       color: #fff;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
     }
 
-    .card-desc {
+    .card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-desc {
       color: var(--text-muted);
       font-size: 0.925rem;
       line-height: 1.5;
@@ -221,65 +244,169 @@
       flex-grow: 1;
     }
 
-    .tags {
+    .tech-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.45rem;
       margin-bottom: 1.5rem;
     }
 
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
+    .tech-tag {
+      font-size: 0.725rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+      background: rgba(56, 189, 248, 0.08);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.2);
       font-weight: 500;
     }
 
-    .card-actions {
-      display: flex;
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 0.75rem;
       margin-top: auto;
     }
 
     .btn {
-      flex: 1;
       text-align: center;
       padding: 0.65rem 1rem;
       border-radius: 8px;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
+      cursor: pointer;
       transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
     }
 
     .btn-primary {
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: #38bdf8;
+      color: #07090e;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
     }
 
     .btn-primary:hover {
-      background: #38bdf8;
-      color: #0b0f17;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+      background: #7dd3fc;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-muted);
+    .btn-preview {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
       border: 1px solid var(--card-border);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
+    .btn-preview:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-container {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-header {
+      padding: 0.85rem 1.25rem;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-title {
+      font-weight: 700;
+      font-size: 1rem;
       color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-controls {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .device-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .device-btn.active {
+      background: var(--accent-cyan);
+      color: #07090e;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .modal-iframe-wrap {
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transition: width 0.3s ease;
     }
 
     footer {
       text-align: center;
-      margin-top: 5rem;
+      margin-top: 6rem;
       padding-top: 2rem;
       border-top: 1px solid var(--card-border);
       color: var(--text-muted);
@@ -287,234 +414,253 @@
     }
 
     @media (max-width: 640px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
+      .btn-group { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="badge">
-        <span class="badge-dot"></span>
-        Creative Monorepo & Portfolio
+      <div class="badge-pill">
+        <span class="pulse-dot"></span>
+        9 Live Commercial Applications • Ready to View
       </div>
       <h1>vibe-Code</h1>
-      <p class="lead">
-        A curated showcase of 9 bespoke commercial web applications, design systems, and frontend prototypes crafted across 2026.
+      <p class="hero-lead">
+        Handcrafted web interfaces, bespoke client experiences, and modular frontend architectures designed and built across 2026.
       </p>
-      <div class="author-bar">
-        <span>Handcrafted by</span>
-        <a href="https://github.com/kumail-ahmad" target="_blank" rel="noreferrer">@kumail-ahmad</a>
+      <div class="author-card">
+        <span>Architect:</span>
+        <a href="https://github.com/kumail-ahmad" target="_blank" rel="noreferrer">Kumail Ahmad</a>
         <span>•</span>
-        <span>React • TypeScript • TailwindCSS • Vite</span>
+        <span>React 18/19 • TypeScript • TailwindCSS • Vite</span>
       </div>
     </header>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterProjects('all')">All Work (9)</button>
-      <button class="filter-btn" onclick="filterProjects('retail')">Retail & Lifestyle</button>
-      <button class="filter-btn" onclick="filterProjects('hospitality')">Hospitality & Dining</button>
-      <button class="filter-btn" onclick="filterProjects('wellness')">Wellness & Studios</button>
+    <div class="controls-bar">
+      <div class="filter-group">
+        <button class="filter-btn active" onclick="filterProjects('all')">All Work (9)</button>
+        <button class="filter-btn" onclick="filterProjects('retail')">Retail & Lifestyle</button>
+        <button class="filter-btn" onclick="filterProjects('hospitality')">Hospitality & Dining</button>
+        <button class="filter-btn" onclick="filterProjects('wellness')">Wellness & Studios</button>
+      </div>
     </div>
 
     <div class="grid" id="projects-grid">
       <!-- 001 -->
-      <article class="card" data-category="retail">
-        <div class="card-header">
-          <span class="project-index">001 // RETAIL</span>
-          <span class="category-pill">Outdoor Retail</span>
+      <article class="project-card" data-category="retail">
+        <div class="card-banner banner-001">
+          <span class="card-id">#001</span>
+          <span class="card-domain">Outdoor Retail</span>
         </div>
-        <h2 class="card-title">Brown's Sporting Goods</h2>
-        <p class="card-desc">
-          Heritage outdoor apparel & sporting goods experience. Featuring responsive product catalogs, curated category navigation, and heritage store storytelling.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Vite</span>
-          <span class="tag">Tailwind</span>
-        </div>
-        <div class="card-actions">
-          <a href="./001_Browns_Sporting_Goods/website/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/001_Browns_Sporting_Goods" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Brown's Sporting Goods</h2>
+          <p class="project-desc">
+            Heritage outdoor apparel, camping, and fishing storefront. Featuring curated product catalogs, local expertise storytelling, and responsive navigation.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React 19</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./001_Browns_Sporting_Goods/website/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Brown\'s Sporting Goods', './001_Browns_Sporting_Goods/website/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 002 -->
-      <article class="card" data-category="hospitality">
-        <div class="card-header">
-          <span class="project-index">002 // HOSPITALITY</span>
-          <span class="category-pill">Botanical Bakery</span>
+      <article class="project-card" data-category="hospitality">
+        <div class="card-banner banner-002">
+          <span class="card-id">#002</span>
+          <span class="card-domain">Botanical Bakery</span>
         </div>
-        <h2 class="card-title">Sugar Magnolia</h2>
-        <p class="card-desc">
-          Artisanal botanical bakery & floral studio interface. Designed with custom organic design tokens, paper card elevations, and seasonal collection menus.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Bespoke Design Tokens</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./002_Sugar_Magnolia/website/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/002_Sugar_Magnolia" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Sugar Magnolia</h2>
+          <p class="project-desc">
+            Artisanal botanical bakery and floral studio. Handcrafted with warm paper elevations, custom organic design tokens, and seasonal collection menus.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Design Tokens</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./002_Sugar_Magnolia/website/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Sugar Magnolia', './002_Sugar_Magnolia/website/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 003 -->
-      <article class="card" data-category="retail">
-        <div class="card-header">
-          <span class="project-index">003 // RETAIL</span>
-          <span class="category-pill">Curio Market</span>
+      <article class="project-card" data-category="retail">
+        <div class="card-banner banner-003">
+          <span class="card-id">#003</span>
+          <span class="card-domain">Vintage Curios</span>
         </div>
-        <h2 class="card-title">Stuff 'N' Things</h2>
-        <p class="card-desc">
-          Eclectic antique & lifestyle vintage goods storefront. Features dynamic catalog filters, item inspection cards, and nostalgic warm typography.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">Lucide Icons</span>
-        </div>
-        <div class="card-actions">
-          <a href="./003_Stuff_N_Things/website/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/003_Stuff_N_Things" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Stuff 'N' Things</h2>
+          <p class="project-desc">
+            Eclectic antique and vintage lifestyle curio marketplace. Features dynamic inventory filters, nostalgia typography, and item inspection cards.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">Lucide</span>
+          </div>
+          <div class="btn-group">
+            <a href="./003_Stuff_N_Things/website/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Stuff \'N\' Things', './003_Stuff_N_Things/website/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 005 -->
-      <article class="card" data-category="wellness">
-        <div class="card-header">
-          <span class="project-index">005 // WELLNESS</span>
-          <span class="category-pill">Hair Studio</span>
+      <article class="project-card" data-category="wellness">
+        <div class="card-banner banner-005">
+          <span class="card-id">#005</span>
+          <span class="card-domain">Hair Studio</span>
         </div>
-        <h2 class="card-title">Aiko Hair Salon</h2>
-        <p class="card-desc">
-          Minimalist Japanese editorial salon website. Highlights service tiers, stylist portfolios, and modern appointment booking flow.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Editorial Grid</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./005_Aiko%20Hair%20Salon/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/005_Aiko%20Hair%20Salon" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Aiko Hair Salon</h2>
+          <p class="project-desc">
+            Minimalist Japanese editorial salon in Blackheath. Precision haircutting, styling portfolio, tiered treatments, and mobile appointment booking.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Editorial UI</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./005_Aiko%20Hair%20Salon/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Aiko Hair Salon', './005_Aiko Hair Salon/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 006 -->
-      <article class="card" data-category="hospitality">
-        <div class="card-header">
-          <span class="project-index">006 // HOSPITALITY</span>
-          <span class="category-pill">Bistro & Wine</span>
+      <article class="project-card" data-category="hospitality">
+        <div class="card-banner banner-006">
+          <span class="card-id">#006</span>
+          <span class="card-domain">Bistro & Wine</span>
         </div>
-        <h2 class="card-title">Islands in Hornsey</h2>
-        <p class="card-desc">
-          Neighbourhood Mediterranean bistro showcase. Features warm atmospheric photography, interactive course menus, and table reservation CTA.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./006_islandsInHornsey/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/006_islandsInHornsey" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Islands in Hornsey</h2>
+          <p class="project-desc">
+            Neighborhood Mediterranean bistro and natural wine bar. Features warm atmospheric photography, seasonal dining courses, and reservation CTAs.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./006_islandsInHornsey/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Islands in Hornsey', './006_islandsInHornsey/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 009 -->
-      <article class="card" data-category="hospitality">
-        <div class="card-header">
-          <span class="project-index">009 // HOSPITALITY</span>
-          <span class="category-pill">Coffee Roasters</span>
+      <article class="project-card" data-category="hospitality">
+        <div class="card-banner banner-009">
+          <span class="card-id">#009</span>
+          <span class="card-domain">Artisan Coffee</span>
         </div>
-        <h2 class="card-title">One Shot Coffee</h2>
-        <p class="card-desc">
-          Artisanal micro-roastery and espresso bar. Features dark aesthetic coffee profiles, origin tasting notes, and neighborhood hours card.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./009_One_Shot_Coffee/website/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/009_One_Shot_Coffee" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">One Shot Coffee</h2>
+          <p class="project-desc">
+            Specialty single-origin micro-roastery. Dark luxe styling, tasting profile cards, origin notes breakdown, and neighborhood hours card.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./009_One_Shot_Coffee/website/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('One Shot Coffee', './009_One_Shot_Coffee/website/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 010 -->
-      <article class="card" data-category="wellness">
-        <div class="card-header">
-          <span class="project-index">010 // WELLNESS</span>
-          <span class="category-pill">Beauty & Lash</span>
+      <article class="project-card" data-category="wellness">
+        <div class="card-banner banner-010">
+          <span class="card-id">#010</span>
+          <span class="card-domain">Luxe Cosmetology</span>
         </div>
-        <h2 class="card-title">Shadows Beauty Saloon</h2>
-        <p class="card-desc">
-          High-end aesthetics and lash studio portal. Features treatment catalogs, customer review showcases, and appointment consultation flow.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./010_shadows%20beauty%20saloon/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/010_shadows%20beauty%20saloon" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Shadows Beauty Saloon</h2>
+          <p class="project-desc">
+            High-end aesthetics, cosmetology, and lash studio portal. Features treatment catalogs, customer review showcases, and appointment consultation flow.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./010_shadows%20beauty%20saloon/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Shadows Beauty Saloon', './010_shadows beauty saloon/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 011 -->
-      <article class="card" data-category="wellness">
-        <div class="card-header">
-          <span class="project-index">011 // WELLNESS</span>
-          <span class="category-pill">Sanctuary & Healing</span>
+      <article class="project-card" data-category="wellness">
+        <div class="card-banner banner-011">
+          <span class="card-id">#011</span>
+          <span class="card-domain">Holistic Healing</span>
         </div>
-        <h2 class="card-title">She Temple</h2>
-        <p class="card-desc">
-          Holistic wellness sanctuary and sound healing studio. Focused on serene earth-toned aesthetics, offering descriptions, and mindful workshops.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Minimal UI</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./011_sheTemple/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/011_sheTemple" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">She Temple</h2>
+          <p class="project-desc">
+            Holistic wellness sanctuary and sound healing studio. Focused on serene earth-toned aesthetics, offering descriptions, and mindful workshops.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Minimal UI</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./011_sheTemple/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('She Temple', './011_sheTemple/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
 
       <!-- 012 -->
-      <article class="card" data-category="wellness">
-        <div class="card-header">
-          <span class="project-index">012 // STUDIO</span>
-          <span class="category-pill">Tattoo Atelier</span>
+      <article class="project-card" data-category="wellness">
+        <div class="card-banner banner-012">
+          <span class="card-id">#012</span>
+          <span class="card-domain">Tattoo Atelier</span>
         </div>
-        <h2 class="card-title">Tattoo Sutra</h2>
-        <p class="card-desc">
-          Fine-line and dark-ink tattoo studio atelier. Features custom flash work galleries, resident artist bios, and booking guidelines.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TailwindCSS</span>
-          <span class="tag">Monochrome UX</span>
-          <span class="tag">Vite</span>
-        </div>
-        <div class="card-actions">
-          <a href="./012_tattooSutra/index.html" class="btn btn-primary">Open App</a>
-          <a href="https://github.com/kumail-ahmad/vibe-Code/tree/main/012_tattooSutra" class="btn btn-secondary">Source</a>
+        <div class="card-body">
+          <h2 class="project-name">Tattoo Sutra</h2>
+          <p class="project-desc">
+            Fine-line and dark-ink tattoo studio atelier. Features custom flash work galleries, resident artist bios, and booking guidelines.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">Monochrome UX</span>
+            <span class="tech-tag">Vite</span>
+          </div>
+          <div class="btn-group">
+            <a href="./012_tattooSutra/dist/index.html" class="btn btn-primary" target="_blank">Launch App ↗</a>
+            <button class="btn btn-preview" onclick="openPreview('Tattoo Sutra', './012_tattooSutra/dist/index.html')">Preview 👁</button>
+          </div>
         </div>
       </article>
     </div>
@@ -524,11 +670,29 @@
     </footer>
   </div>
 
+  <!-- Interactive Live Preview Modal -->
+  <div class="modal-overlay" id="previewModal" onclick="closePreview(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Project Preview</div>
+        <div class="modal-controls">
+          <button class="device-btn active" onclick="setDevice('100%', this)">Desktop</button>
+          <button class="device-btn" onclick="setDevice('768px', this)">Tablet</button>
+          <button class="device-btn" onclick="setDevice('390px', this)">Mobile</button>
+          <button class="modal-close" onclick="closePreview()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-iframe-wrap">
+        <iframe id="previewIframe" src=""></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
     function filterProjects(cat) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
-      const cards = document.querySelectorAll('.card');
+      const cards = document.querySelectorAll('.project-card');
       cards.forEach(card => {
         if (cat === 'all' || card.getAttribute('data-category') === cat) {
           card.style.display = 'flex';
@@ -537,7 +701,29 @@
         }
       });
     }
+
+    function openPreview(title, url) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('previewIframe').src = url;
+      document.getElementById('previewModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreview() {
+      document.getElementById('previewModal').style.display = 'none';
+      document.getElementById('previewIframe').src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    function setDevice(width, btn) {
+      document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('previewIframe').style.width = width;
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePreview();
+    });
   </script>
 </body>
 </html>
- 
