@@ -725,5 +725,11 @@
       if (e.key === 'Escape') closePreview();
     });
   </script>
+  <script>
+    // Quick keyboard shortcut: Press '/' to focus filter
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') filterProjects('all');
+    });
+  </script>
 </body>
 </html>
